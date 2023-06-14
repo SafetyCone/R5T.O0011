@@ -17,19 +17,17 @@ namespace R5T.O0011
     [ValuesMarker]
     public partial interface IProjectContextOperations : IValuesMarker
     {
-        public Func<IProjectContext, Task> Create_WebServerForBlazorClient(
+        public Func<IProjectContext, Task> Create_BlazorClient(
             IProjectDescription projectDescription,
             IsSet<IRepositoryUrl> repositoryUrl,
-            IProjectFilePath clientProjectFilePath,
             Func<IProjectFilePath, Task> projectFilePathHandler)
         {
             return Instances.ProjectContextOperations_L0040.Create_New_Project(
-                Instances.ProjectFileContextOperations.Setup_WebServerForBlazorClientProjectFile(
+                Instances.ProjectFileContextOperations.Setup_BlazorClientProjectFile(
                     projectDescription,
-                    repositoryUrl,
-                    clientProjectFilePath
+                    repositoryUrl
                 ),
-                Instances.ProjectContextOperations_L0040.Setup_WebServerForBlazorClient(
+                Instances.ProjectContextOperations_L0040.Setup_BlazorClient(
                     projectDescription
                 ),
                 projectFilePathHandler
