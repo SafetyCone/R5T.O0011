@@ -17,6 +17,23 @@ namespace R5T.O0011
     [ValuesMarker]
     public partial interface IProjectContextOperations : IValuesMarker
     {
+        public Func<IProjectContext, Task> Create_RazorClassLibrary(
+            IProjectDescription projectDescription,
+            IsSet<IRepositoryUrl> repositoryUrl
+            // No need for a project file path handler, that should just be another project context operation!
+            )
+        {
+            return Instances.ProjectContextOperations_L0040.Create_New_Project(
+                Instances.ProjectFileContextOperations.Setup_RazorClassLibraryProjectFile(
+                    projectDescription,
+                    repositoryUrl
+                ),
+                Instances.ProjectContextOperations_L0040.Setup_RazorClassLibrary(
+                    projectDescription
+                )
+            );
+        }
+
         public Func<IProjectContext, Task> Create_BlazorClient(
             IProjectDescription projectDescription,
             IsSet<IRepositoryUrl> repositoryUrl,
