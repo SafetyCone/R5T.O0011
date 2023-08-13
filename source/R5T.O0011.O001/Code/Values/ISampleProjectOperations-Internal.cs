@@ -8,7 +8,7 @@ using R5T.T0159;
 namespace R5T.O0011.O001.Internal
 {
     [ValuesMarker]
-    public partial interface IProjectOperations : IValuesMarker
+    public partial interface ISampleProjectOperations : IValuesMarker
     {
         public ProjectContext PrepareAndGetContext(
             ITextOutput textOutput)

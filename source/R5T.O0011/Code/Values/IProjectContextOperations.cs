@@ -37,7 +37,7 @@ namespace R5T.O0011
         public Func<IProjectContext, Task> Create_BlazorClient(
             IProjectDescription projectDescription,
             IsSet<IRepositoryUrl> repositoryUrl,
-            Func<IProjectFilePath, Task> projectFilePathHandler)
+            Func<IProjectFilePath, Task> projectFilePathHandler = default)
         {
             return Instances.ProjectContextOperations_L0040.Create_New_Project(
                 Instances.ProjectFileContextOperations.Setup_BlazorClientProjectFile(
